@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110052715) do
+ActiveRecord::Schema.define(version: 20180110060142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "teams", force: :cascade do |t|
+    t.string "color"
+    t.string "name"
+    t.integer "tech_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teches", force: :cascade do |t|
     t.string "user_name", null: false
+    t.integer "team_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

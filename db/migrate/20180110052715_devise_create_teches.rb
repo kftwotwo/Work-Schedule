@@ -3,8 +3,10 @@
 class DeviseCreateTeches < ActiveRecord::Migration[5.1]
   def change
     create_table :teches do |t|
-      ## Database authenticatable
       t.string :user_name, null:false
+      t.integer :team_id
+
+      ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
