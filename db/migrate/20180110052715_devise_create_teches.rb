@@ -5,6 +5,7 @@ class DeviseCreateTeches < ActiveRecord::Migration[5.1]
     create_table :teches do |t|
       t.string :user_name, null:false
       t.integer :team_id
+      t.integer :vehicle_id
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
