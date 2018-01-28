@@ -3,4 +3,5 @@ class Tech < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :team
+  has_many :vehicles
 end
